@@ -1,5 +1,5 @@
 //public
-export const public = [
+export const routes_public = [
   {
     name: 'Inicio',
     path: '/',
