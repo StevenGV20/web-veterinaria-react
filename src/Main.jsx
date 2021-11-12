@@ -1,20 +1,28 @@
 import React, { Component } from 'react';
-import { Route,Router,Switch,Redirect,withRouter,BrowserRouter } from 'react-router-dom';
-import { Provider } from 'react-redux';
+import { Route,Switch } from 'react-router-dom';
+import Header from './components/header/'
+import Footer from './components/footer';
+import routes from './routes/';
 
 class Main extends Component  {
 
-  constructor(name) {
-    this.name=name;
+  // eslint-disable-next-line no-useless-constructor
+  constructor(props) {
+    super(props);
   }
-
   render(){
     return(
-      <BrowserRouter>
-        <Switch>
-          <Route path="/" component=""/>
+      <>
+        <Header/>
+        <Switch location={this.props.location}>
+          {routes.routes.map((route) => 
+            <Route key={route.path} path={route.path} exact={route.exact} component={route.component}/>
+          )}
         </Switch>
-      </BrowserRouter>
+        <Footer/>
+      </>
     )
   }
 }
+
+export default Main;
