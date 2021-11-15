@@ -1,0 +1,15 @@
+.menu-container {
+  @apply hidden md:flex px-4 mx-auto font-semibold;
+  &-li {
+    @apply block hover:bg-white hover:text-black p-6;
+    &-ul {
+      @apply absolute bg-white text-black text-left -ml-6 mt-4 space-y-2;
+      &-li {
+        @apply hover:text-gray-200 py-3 px-8;
+        &:hover {
+          @apply bg-gray-700 text-white;
+        }
+      }
+    }
+  }
+}

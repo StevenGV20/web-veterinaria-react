@@ -13,13 +13,19 @@ class Main extends Component  {
   render(){
     return(
       <>
-        <Header/>
-        <Switch location={this.props.location}>
-          {routes.routes.map((route) => 
-            <Route key={route.path} path={route.path} exact={route.exact} component={route.component}/>
-          )}
-        </Switch>
-        <Footer/>
+      <div class="min-h-screen flex flex-col text-center">
+        <div class="bg-gray-200 h-20"><Header/></div>
+        <div class="bg-gray-100 flex-grow">
+          <Switch location={this.props.location}>
+            {routes.routes.map((route) => 
+              <Route key={route.path} path={route.path} exact={route.exact} component={route.component}/>
+            )}
+          </Switch>
+        </div>
+        <div class="bg-gray-200 h-32">
+          <Footer/>
+        </div>
+      </div>
       </>
     )
   }

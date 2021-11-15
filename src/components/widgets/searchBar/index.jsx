@@ -3,8 +3,8 @@ import './_.css';
 
 export default function SearchBar(props) {
   return (
-    <div>
-      SearchBar
+    <div className="search-container">
+      <input type="search" className="search-container-input"/>
     </div>
   )
 }
