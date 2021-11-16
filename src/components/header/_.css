@@ -1,6 +1,6 @@
 .header {
   &-container {
-    @apply fixed z-10 w-full bg-gray-500 text-gray-100 items-baseline;
+    @apply fixed z-10 w-full bg-gray-500 text-gray-100 items-baseline top-0;
     /* @apply flex flex-wrap place-items-start h-screen; */
   }
   &-section {
@@ -15,7 +15,7 @@
       @apply flex flex-row justify-between space-x-4;
     }
     &-third-part {
-      @apply hidden xl:flex items-center space-x-5;
+      @apply hidden lg:flex items-center space-x-5;
     }
   }
 }
@@ -27,4 +27,8 @@
   &-sm{
     @apply flex px-4;
   }
+}
+
+.mobile{
+  @apply lg:hidden;
 }

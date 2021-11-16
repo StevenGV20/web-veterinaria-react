@@ -53,7 +53,7 @@ export default function NavBar() {
         }
 
       </li>
-      <li className="menu-container-li" onMouseLeave={() => setMenuServices(!menuServices)}>
+      <li className="menu-container-li" onMouseLeave={() => setMenuServices(false)}>
         <NavLink className="" to="/services"  onMouseOver={openNavServices} onClick={openNavServices}>Servicios</NavLink>
         {
           windowWidth > 1024 ? 

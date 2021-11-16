@@ -1,0 +1,12 @@
+.cart-container{
+  @apply w-full bg-gray-300;
+}
+
+.product{
+  &-container{
+    @apply w-full flex flex-row;
+  }
+  &-img{
+    @apply border-2 border-black w-full;
+  }
+}

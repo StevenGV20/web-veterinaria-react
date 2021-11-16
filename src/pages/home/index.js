@@ -3,7 +3,7 @@ import React from 'react'
 export default function Home() {
   return (
     <>
-      <div class="h-56 md:h-100 md:bg-center bg-no-repeat bg-cover bg-bottom"></div>
+      <div class="md:bg-center bg-no-repeat bg-cover bg-bottom"></div>
     <div class="container mx-auto md:flex">
       <div class="mx-2 md:mx-0 mt-4 md:w-1/2 md:flex md:bg-white rounded-lg">
         <div>
@@ -13,7 +13,7 @@ export default function Home() {
           <h2 class="text-xl tracking-tight font-semibold uppercase text-gray-900 md:text-lg">Hamburguesa con queso</h2>
           <p class="text-gray-700 leading-snug">Hamburguesa con queso y aderezo chipotle.</p>
           <div class="mt-2 text-sm font-semibold text-gray-700">PEN S/. 15.00</div>
-          <div class="mt-2 text-xs text-yellow-700">&starf;&starf;&starf;&starf;&star; / comentarios</div>
+          <div class="mt-2 text-xs text-yellow-700"><div>&starf;</div>{'&starf;'} {'\u02A0'} &starf;&starf;&star; / comentarios</div>
         </div>
       </div>
 
@@ -25,7 +25,7 @@ export default function Home() {
           <h2 class="text-xl tracking-tight font-semibold uppercase text-gray-900 md:text-lg">Hamburguesa con queso</h2>
           <p class="text-gray-700 leading-snug">Hamburguesa con queso y aderezo chipotle.</p>
           <div class="mt-2 text-sm font-semibold text-gray-700">PEN S/. 15.00</div>
-          <div class="mt-2 text-xs text-yellow-700">&starf;&starf;&starf;&starf;&star; / comentarios</div>
+          <div class="mt-2 text-xs text-yellow-700">{'&starf;'}&starf;&starf;&starf;&star; / comentarios</div>
         </div>
       </div>
     </div>
