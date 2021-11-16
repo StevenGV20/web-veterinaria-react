@@ -1,13 +1,27 @@
 .menu-container {
-  @apply hidden md:flex px-4 mx-auto font-semibold;
+  @apply flex flex-col lg:flex-row lg:px-4 lg:mx-auto font-semibold h-full overflow-y-scroll lg:overflow-auto;
+
   &-li {
-    @apply block hover:bg-white hover:text-black p-6;
+    @apply block p-4 lg:p-6 text-white text-xl;
+    @screen lg{
+      &:hover{
+        @apply bg-white text-black;
+      }
+    }
+
     &-ul {
-      @apply absolute bg-white text-black text-left -ml-6 mt-4 space-y-2;
+      @apply grid grid-cols-3 items-baseline text-white text-left -ml-6 lg:mt-4 space-y-2 text-base;
+      
+      @screen lg{
+        @apply absolute block bg-white text-black;
+      }
       &-li {
-        @apply hover:text-gray-200 py-3 px-8;
-        &:hover {
-          @apply bg-gray-700 text-white;
+        @apply py-3 px-8;
+        
+        @screen lg{
+          &:hover {
+            @apply bg-gray-700 text-white;
+          }
         }
       }
     }

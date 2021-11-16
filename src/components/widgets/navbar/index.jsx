@@ -23,11 +23,18 @@ export default function NavBar() {
     
   ]
 
+  const openNavProducts = () => setMenuProducts(!menuProducts);
+  const openNavServices = () => setMenuServices(!menuServices);
+  
+  const windowWidth = window.innerWidth;
+
   return (
     <ul className="menu-container">
-      <li className="menu-container-li" onMouseOver={() => setMenuProducts(true)} onMouseLeave={() => setMenuProducts(false)}>
-        <NavLink to="/products">Productos</NavLink>
-        { menuProducts ?
+      <li className="menu-container-li" onMouseLeave={() => setMenuProducts(false)}>
+        <NavLink to="#"  onMouseOver={openNavProducts} onClick={openNavProducts} >Productos</NavLink>
+        {
+          windowWidth > 1024 ? (
+            menuProducts ?
           (<ul className="menu-container-li-ul">
             { 
               linkProducts.map((p) => 
@@ -35,23 +42,44 @@ export default function NavBar() {
               )
             }
           </ul>)
-        : ""}
-      </li>
-      <li className="menu-container-li" onMouseOver={() => setMenuServices(true)} onMouseLeave={() => setMenuServices(false)}>
-        <NavLink className="" to="/services">Servicios</NavLink>
-        { menuServices ?
-          (<ul className="menu-container-li-ul">
+        : ""
+          ) : <ul className="menu-container-li-ul">
             { 
-              linkServices.map((s) => 
-                <li className="menu-container-li-ul-li" key={s.id}><NavLink to={s.url}>{s.nombre}</NavLink></li>
+              linkProducts.map((p) => 
+                <li className="menu-container-li-ul-li" key={p.id}><NavLink to={p.url}>{p.nombre}</NavLink></li>
               )
             }
-          </ul>)
-        : ""}
+          </ul>
+        }
+
       </li>
-      <li><a className="menu-container-li" href="#">Catagory</a></li>
-      <li><a className="menu-container-li" href="#">Collections</a></li>
-      <li><a className="menu-container-li" href="#">Contact Us</a></li>
+      <li className="menu-container-li" onMouseLeave={() => setMenuServices(!menuServices)}>
+        <NavLink className="" to="/services"  onMouseOver={openNavServices} onClick={openNavServices}>Servicios</NavLink>
+        {
+          windowWidth > 1024 ? 
+          (menuServices ?
+            (<ul className="menu-container-li-ul">
+              { 
+                linkServices.map((s) => 
+                  <li className="menu-container-li-ul-li" key={s.id}><NavLink to={s.url}>{s.nombre}</NavLink></li>
+                )
+              }
+            </ul>)
+            : ""
+          ) 
+          :
+          <ul className="menu-container-li-ul">
+              { 
+                linkServices.map((s) => 
+                  <li className="menu-container-li-ul-li" key={s.id}><NavLink to={s.url}>{s.nombre}</NavLink></li>
+                )
+              }
+            </ul>
+        }
+      </li>
+      {/* <li><Link className="menu-container-li" to="#">Catagory</Link></li>
+      <li><Link className="menu-container-li" to="#">Collections</Link></li>
+      <li><Link className="menu-container-li" to="#">Contact Us</Link></li> */}
     </ul>
   )
 }

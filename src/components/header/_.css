@@ -1,12 +1,13 @@
 .header {
   &-container {
-    @apply flex flex-wrap place-items-start h-screen;
+    @apply fixed z-10 w-full bg-gray-500 text-gray-100 items-baseline;
+    /* @apply flex flex-wrap place-items-start h-screen; */
   }
   &-section {
     @apply relative mx-auto;
   }
   &-nav {
-    @apply flex justify-between bg-gray-900 text-white w-screen;
+    @apply flex justify-between p-4 lg:p-0 bg-gray-900 text-white w-screen;
     &-lg {
       @apply px-5 xl:px-12 flex w-full items-center;
     }
@@ -16,5 +17,14 @@
     &-third-part {
       @apply hidden xl:flex items-center space-x-5;
     }
+  }
+}
+
+.navbar-container{
+  &-lg{
+    @apply hidden lg:flex px-4 mx-auto font-semibold;
+  }
+  &-sm{
+    @apply flex px-4;
   }
 }
