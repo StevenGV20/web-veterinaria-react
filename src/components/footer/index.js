@@ -1,15 +1,16 @@
 import React from 'react'
+import './_.css';
 
 export default function Footer() {
   return (
-    <footer class="text-white bg-gray-700 w-full">
-      <div class="md:flex md:flex-row-reverse justify-around">
-        <div class="ml-8">
-          <div class="hover:text-primary"><i class="fa fa-facebook"></i> /facebook</div>
-          <div class="hover:text-primary"><i class="fa fa-twitter"></i> @platzifood</div>
-          <div class="hover:text-primary"><i class="fa fa-instagram"></i> @platzifood</div>
+    <footer class="footer-container">
+      <div class="footer-links">
+        <div class="footer-links-social-container">
+          <div class="footer-links-social-name"><i class="fa fa-facebook"></i> /facebook</div>
+          <div class="footer-links-social-name"><i class="fa fa-twitter"></i> @platzifood</div>
+          <div class="footer-links-social-name"><i class="fa fa-instagram"></i> @platzifood</div>
         </div>
-        <ul class="mt-4 mb-4 ml-8 md:list-disc">
+        <ul class="footer-links-pages-container">
           <li>Soporte</li>
           <li>Acerca de nosotros</li>
           <li>Registro</li>

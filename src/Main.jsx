@@ -14,7 +14,7 @@ class Main extends Component  {
     return(
       <>
         <Header/>
-        <div className="bg-white mt-20 p-8 flex-grow">
+        <div className="bg-white mt-20 p-4 flex-grow">
           <Switch location={this.props.location}>
             {routes.routes.map((route) => 
               <Route key={route.path} path={route.path} exact={route.exact} component={route.component}/>

@@ -1,0 +1,17 @@
+.footer{
+  &-container{
+    @apply text-white bg-gray-700 w-full;
+  }
+  &-links{
+    @apply md:flex md:flex-row-reverse justify-around;
+    &-social-container{
+      @apply ml-8;
+    }
+    &-social-name{
+      @apply text-white hover:text-yellow-700;
+    }
+    &-pages-container{
+      @apply mt-4 mb-4 ml-8 md:list-disc;
+    }
+  }
+}
