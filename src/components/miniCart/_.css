@@ -1,13 +1,21 @@
 .cart-container{
-  @apply w-full bg-gray-300;
+  @apply w-full bg-gray-200 text-black p-4;
+  &-buttons{
+    @apply flex flex-row space-x-4 justify-center mx-auto w-full p-4;
+  }
 }
 
 .product{
   &-container{
-    @apply w-full flex flex-row;
+    @apply w-full;
   }
   &-img{
     @apply border-2 border-black w-full;
   }
-  
+  &-detail{
+    @apply text-left pl-2 text-sm;
+  }
+  &-price{
+    @apply text-sm;
+  }
 }

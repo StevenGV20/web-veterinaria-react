@@ -5,3 +5,13 @@
 #root{
   @apply min-h-screen flex flex-col text-center;
 }
+
+.btn{
+  @apply px-8 py-2 bg-gray-100 text-black rounded;
+}
+.btn-red{
+  @apply bg-red-600 text-white font-semibold;
+}
+.btn-blue{
+  @apply bg-blue-600 text-white font-semibold;
+}

@@ -1,6 +1,6 @@
 .header {
   &-container {
-    @apply fixed z-10 w-full bg-gray-500 text-gray-100 items-baseline top-0;
+    @apply fixed z-10 w-full bg-transparent text-gray-100 items-baseline top-0;
     /* @apply flex flex-wrap place-items-start h-screen; */
   }
   &-section {
@@ -25,10 +25,28 @@
     @apply hidden lg:flex px-4 mx-auto font-semibold;
   }
   &-sm{
-    @apply flex px-4;
+    @apply flex px-4 bg-gray-700;
   }
 }
 
 .mobile{
   @apply lg:hidden;
+  &-cart{
+    @apply flex mr-6 items-center lg:hidden;
+  }
+}
+
+.mini-cart{
+  &-container{
+    @apply block;
+  }
+  &-popup{
+    @apply w-full sm:w-10/12 md:w-8/12 mx-auto md:absolute md:right-1 md:mx-0 lg:hidden;
+    &-lg{
+      @screen lg{
+        @apply absolute mt-4 w-4/12 right-4;
+      }
+    }
+  }
+
 }

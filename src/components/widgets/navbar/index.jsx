@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useEffect, useState } from 'react'
 import './_.css'
 import { NavLink } from 'react-router-dom';
 
@@ -7,6 +8,14 @@ export default function NavBar() {
   const [menuProducts, setMenuProducts] = useState(false);
   
   const [menuServices, setMenuServices] = useState(false);
+
+ /*  const [category,setCategory] = useState([]);
+
+  useEffect(async () => {
+    const response = await fetch("");
+    const json = await response.json();
+    setCategory(json);
+  }, [category]) */
 
   const linkProducts = [
     {id:101, nombre:"Perros",url:"/products"},
@@ -27,13 +36,12 @@ export default function NavBar() {
   const openNavServices = () => setMenuServices(!menuServices);
   
   const windowWidth = window.innerWidth;
-
   return (
     <ul className="menu-container">
       <li className="menu-container-li" onMouseLeave={() => setMenuProducts(false)}>
         <NavLink to="#"  onMouseOver={openNavProducts} onClick={openNavProducts} >Productos</NavLink>
         {
-          windowWidth > 1024 ? (
+          windowWidth > 1000 ? (
             menuProducts ?
           (<ul className="menu-container-li-ul">
             { 
@@ -56,7 +64,7 @@ export default function NavBar() {
       <li className="menu-container-li" onMouseLeave={() => setMenuServices(false)}>
         <NavLink className="" to="/services"  onMouseOver={openNavServices} onClick={openNavServices}>Servicios</NavLink>
         {
-          windowWidth > 1024 ? 
+          windowWidth > 1000 ? 
           (menuServices ?
             (<ul className="menu-container-li-ul">
               { 

@@ -2,7 +2,7 @@
   @apply flex flex-col lg:flex-row lg:px-4 lg:mx-auto font-semibold h-full overflow-y-scroll lg:overflow-auto;
 
   &-li {
-    @apply block p-4 lg:p-6 text-white text-xl;
+    @apply block p-4 lg:p-6 text-white text-xl text-left;
     @screen lg{
       &:hover{
         @apply bg-white text-black;
