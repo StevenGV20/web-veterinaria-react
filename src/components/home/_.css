@@ -28,7 +28,7 @@
 
   &-promo{
     &-container{
-      @apply mt-10 overflow-x-scroll;
+      @apply mt-10 overflow-x-scroll lg:overflow-hidden;
     }
     &-images-content{
       @apply pointer-events-none lg:absolute lg:inset-y-0 lg:max-w-7xl lg:mx-auto lg:w-full;

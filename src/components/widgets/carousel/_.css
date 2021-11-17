@@ -1,0 +1,20 @@
+.carousel{
+  &-container{
+    @apply bg-white;
+  }/* 
+  &__slider-tray--horizontal{
+    @apply space-x-1;
+  } */
+  &__inner-slide{
+    @apply p-2 mr-2;
+  }
+  &-arrow{
+    @apply absolute bg-gray-700 rounded-full text-white -mt-52 px-4 py-2 font-bold hover:bg-gray-400;
+    &.back{
+      @apply left-3;
+    }
+    &.next{
+      @apply right-3;
+    }
+  }
+}
