@@ -47,10 +47,13 @@ export default function Header(props) {
               </div>
             </div>
 
-            <button  className="mobile-cart" onClick={() => setCartOpen(!isCartOpen)}>
+            <button  className="header-mobile" onClick={() => setCartOpen(!isCartOpen)}>
               <CartIcon numItems={numItems}/>
             </button>
-            <button  className="mobile navbar-burger self-center" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+            <Link  className="header-mobile" to="#">
+                <LoginIcon />
+            </Link>
+            <button  className="header-mobile navbar-burger self-center" onClick={() => setIsMenuOpen(!isMenuOpen)}>
                 <MenuIcon />
             </button>
 

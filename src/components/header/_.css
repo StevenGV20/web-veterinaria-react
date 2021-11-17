@@ -18,6 +18,9 @@
       @apply hidden lg:flex items-center space-x-5;
     }
   }
+  &-mobile{
+    @apply lg:hidden flex mr-6 items-center;
+  }
 }
 
 .navbar-container{
@@ -29,12 +32,6 @@
   }
 }
 
-.mobile{
-  @apply lg:hidden;
-  &-cart{
-    @apply flex mr-6 items-center lg:hidden;
-  }
-}
 
 .mini-cart{
   &-container{
