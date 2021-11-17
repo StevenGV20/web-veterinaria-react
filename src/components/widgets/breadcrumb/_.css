@@ -1,0 +1,18 @@
+.breadcrumb{
+  &-container{
+    @apply flex py-4;
+  }
+  &-ol{
+    @apply inline-flex items-center space-x-1 md:space-x-3;
+  }
+  &-li{
+    @apply flex items-center;
+  }
+  &-link{
+    @apply text-gray-700 hover:text-gray-900 inline-flex items-center;
+    &-actual{
+      @apply text-gray-400 ml-1 md:ml-2 text-sm font-medium;
+    }
+  }
+  
+}
