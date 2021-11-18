@@ -117,11 +117,27 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <Carousel numItems={products.length} numView={windowWidth > 1000 ? 4 : windowWidth > 600 ? 3 : windowWidth > 400 ? 2 : 1}>
-        {products.map( (product) => 
-          <ProductCard product={product}/>
-        )}
-      </Carousel> 
+      <div className="home-container-products">
+        <div className="home-container-products-title">
+          Nuestro Productos
+        </div>
+        <Carousel numItems={products.length} numView={windowWidth > 1000 ? 4 : windowWidth > 700 ? 3 : windowWidth > 500 ? 2 : 1}>
+          {products.map( (product) => 
+            <ProductCard product={product}/>
+          )}
+        </Carousel> 
+      </div>
+
+      <div className="home-container-products">
+        <div className="home-container-products-title">
+          Nuestro Servicios
+        </div>
+        <Carousel numItems={products.length} numView={windowWidth > 1000 ? 4 : windowWidth > 700 ? 3 : windowWidth > 500 ? 2 : 1}>
+          {products.map( (product) => 
+            <ProductCard product={product}/>
+          )}
+        </Carousel> 
+      </div>
     </div>
   )
 }

@@ -4,26 +4,33 @@ import { Link } from 'react-router-dom';
 import SearchBar from '../widgets/searchBar';
 import NavBar from '../widgets/navbar';
 import MiniCart from '../miniCart';
-import {CartIcon, HeartIcon, LoginIcon, MenuIcon} from '../utils/icons-svg'
+import SearchBarResults from '../widgets/searchBar/results';
+import {CartIcon, HeartIcon, LoginIcon, MenuIcon, SearchIcon} from '../utils/icons-svg'
 
 export default function Header(props) {
 
   const [isMenuOpen, setIsMenuOpen] = useState(false) 
   const [isCartOpen, setCartOpen] = useState(false);
+  const [isSearchOpen, setSearchOpen] = useState(false);
+  const openSearch = (b) => setSearchOpen(b);
   const numItems = 4;
   return (
     <>   
-
       <div  className="header-container">
         <section  className="header-section">
           <nav  className="header-nav">
             <div  className="header-nav-lg">
               <div  className="header-nav-logo-container">
-                <Link className="text-3xl font-bold lg:w-1/2" to="/home">
+                <Link className="header-nav-logo-title" to="/home">
                   Logo Here.
                 </Link>
-                <div className="hidden lg:flex lg:w-1/2">
+                <div className="hidden lg:flex lg:w-1/2" onClick={()=>setSearchOpen(true)}>
                   <SearchBar />
+                  {isSearchOpen ? 
+                    <div className="header-container-search">
+                      <SearchBarResults />
+                    </div>
+                  : ""}
                 </div>
               </div>
               <div className="navbar-container-lg">
@@ -31,10 +38,10 @@ export default function Header(props) {
               </div>
               <div  className="header-nav-third-part">
                 <Link  className="hover:text-gray-200" to="#">
-                  <HeartIcon />
+                  <HeartIcon className="header-mobile-icon"/>
                 </Link>
                 <button  className="mini-cart-container" onClick={() => setCartOpen(true)} >
-                  <CartIcon numItems={numItems}/>
+                  <CartIcon numItems={numItems} className="header-mobile-icon"/>
                   {isCartOpen ? 
                       <div className="mini-cart-popup-lg" onMouseLeave={() => setCartOpen(false)}>
                         <MiniCart />
@@ -42,20 +49,24 @@ export default function Header(props) {
                   : ""}
                 </button>
                 <Link  className="flex items-center hover:text-gray-200" to="#">
-                    <LoginIcon />
+                    <LoginIcon className="header-mobile-icon"/>
                 </Link>
               </div>
             </div>
-
-            <button  className="header-mobile" onClick={() => setCartOpen(!isCartOpen)}>
-              <CartIcon numItems={numItems}/>
-            </button>
-            <Link  className="header-mobile" to="#">
-                <LoginIcon />
-            </Link>
-            <button  className="header-mobile navbar-burger self-center" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-                <MenuIcon />
-            </button>
+            <div className="header-mobile" >
+              <button onClick={() => setCartOpen(!isCartOpen)}>
+                <SearchIcon className="header-mobile-icon"/>
+              </button>
+              <button onClick={() => setCartOpen(!isCartOpen)}>
+                <CartIcon numItems={numItems} className="header-mobile-icon"/>
+              </button>
+              <Link to="#">
+                  <LoginIcon className="header-mobile-icon"/>
+              </Link>
+              <button className="header-mobile navbar-burger self-center" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+                  <MenuIcon className="header-mobile-icon"/>
+              </button>
+            </div>
 
           </nav>
           {isMenuOpen ? 

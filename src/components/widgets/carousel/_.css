@@ -9,7 +9,7 @@
     @apply p-2 mr-2;
   }
   &-arrow{
-    @apply absolute bg-gray-700 rounded-full text-white -mt-52 px-4 py-2 font-bold hover:bg-gray-400;
+    @apply absolute bg-gray-700 rounded-full text-white -mt-52 xl:-mt-80 px-4 py-2 font-bold hover:bg-gray-400;
     &.back{
       @apply left-3;
     }

@@ -15,7 +15,7 @@ export default function Carousel({
     <div className="carousel-container">
       <CarouselProvider
         naturalSlideWidth={100}
-        naturalSlideHeight={100}
+        naturalSlideHeight={125}
         totalSlides={numItems}
         visibleSlides={numView}
         currentSlide={1}

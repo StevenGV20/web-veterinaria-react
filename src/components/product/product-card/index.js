@@ -3,9 +3,8 @@ import { Link } from 'react-router-dom';
 
 export default function ProductCard({product}) {
   return (
-    <div>
-      <div class="text-gray-600 flex flex-row -m-4 w-full">
-            <Link className="p-4 w-full" to={product.url}>
+    <div class="text-gray-600 flex w-full">
+            <Link className="p-2 w-full" to={product.url}>
               <div className="flex flex-col items-center text-center bg-gray-800 rounded-lg">
                   <img alt="team"
                       className="flex-shrink-0 rounded-t-lg h-auto w-full object-cover object-center mb-4"
@@ -17,6 +16,5 @@ export default function ProductCard({product}) {
               </div>
           </Link>
       </div> 
-    </div>
   )
 }

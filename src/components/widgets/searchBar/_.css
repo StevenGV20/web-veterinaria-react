@@ -1,6 +1,11 @@
 .search-container {
-  @apply p-4;
+  @apply flex flex-row items-baseline border-b-2; 
   &-input {
-    @apply ring-4;
+    @apply bg-gray-900 text-white outline-none;
+  }
+  input::-ms-clear{
+    background-color: red;
+    color: white;
+    border: 1px solid #808080;
   }
 }

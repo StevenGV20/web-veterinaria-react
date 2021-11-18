@@ -3,7 +3,7 @@ import Breadcrumb from '../../components/widgets/breadcrumb'
 
 export default function ProductList(props) {
   const links = [
-    {id:1,url:'/products',name:'Lista de Productos',actual:true}
+    {id:1,url:'/products',name:'Productos',actual:true}
   ]
   return (
     <div>

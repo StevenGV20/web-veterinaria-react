@@ -10,6 +10,7 @@
       @apply relative max-w-7xl mx-auto px-4 pb-8 sm:px-6 lg:px-8 sm:static ;
     }
   }
+
   &-info{
     @apply sm:max-w-lg;
     &-title{
@@ -43,4 +44,14 @@
       @apply flex-shrink-0 grid grid-cols-1 gap-y-6 lg:gap-y-8;
     }
   }
+
+  &-products{
+    @apply w-full my-4;
+
+    &-title{
+      @apply bg-gray-700 text-white text-left px-4 py-6 text-2xl font-semibold;
+    }
+  }
+  
+
 }
