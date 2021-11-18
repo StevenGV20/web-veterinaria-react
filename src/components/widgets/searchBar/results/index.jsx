@@ -6,16 +6,16 @@ export default function SearchBarResults({links}) {
   return (
     <div className="search-results-container">
       <table>
-        <thead>
-          <th>
+        <thead className="search-results-title">
+          <tr>
             <td>Search results</td>
-          </th>
+          </tr>
         </thead>
         <tbody>
-          <tr>
+          <tr key="1">
             <td><Link to="#">Producto 1</Link></td>
           </tr>
-          <tr>
+          <tr key="2">
             <td><Link to="#">Producto 2</Link></td>
           </tr>
         </tbody>

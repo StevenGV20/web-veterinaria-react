@@ -123,7 +123,7 @@ export default function Home() {
         </div>
         <Carousel numItems={products.length} numView={windowWidth > 1000 ? 4 : windowWidth > 700 ? 3 : windowWidth > 500 ? 2 : 1}>
           {products.map( (product) => 
-            <ProductCard product={product}/>
+            <ProductCard product={product} key={product.id}/>
           )}
         </Carousel> 
       </div>
@@ -134,7 +134,7 @@ export default function Home() {
         </div>
         <Carousel numItems={products.length} numView={windowWidth > 1000 ? 4 : windowWidth > 700 ? 3 : windowWidth > 500 ? 2 : 1}>
           {products.map( (product) => 
-            <ProductCard product={product}/>
+            <ProductCard product={product} key={product.id}/>
           )}
         </Carousel> 
       </div>

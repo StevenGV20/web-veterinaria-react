@@ -2,9 +2,6 @@
   &-container {
     @apply fixed z-10 w-full bg-transparent text-gray-100 items-baseline top-0;
     /* @apply flex flex-wrap place-items-start h-screen; */
-    &-search{
-      @apply absolute mt-12 w-4/12 bg-gray-800;
-    }
   }
   &-section {
     @apply relative mx-auto;
@@ -29,6 +26,9 @@
 
     &-icon{
       @apply h-6 w-6;
+    }
+    &-search-container{
+      @apply w-full bg-gray-900 p-4 lg:hidden;
     }
   }
 }

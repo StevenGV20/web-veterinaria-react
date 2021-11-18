@@ -2,4 +2,7 @@
   &-container{
     @apply flex p-2;
   }
+  &-title{
+    @apply text-sm;
+  }
 }

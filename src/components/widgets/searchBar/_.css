@@ -1,11 +1,9 @@
 .search-container {
-  @apply flex flex-row items-baseline border-b-2; 
+  @apply flex flex-row items-baseline mx-auto w-full sm:w-8/12 md:w-1/2 lg:w-full border-b-2; 
   &-input {
-    @apply bg-gray-900 text-white outline-none;
+    @apply bg-gray-900 text-white outline-none w-full;
   }
-  input::-ms-clear{
-    background-color: red;
-    color: white;
-    border: 1px solid #808080;
+  &-results{
+    @apply absolute mt-12 mx-auto w-full left-0 sm:left-auto sm:w-8/12 md:w-1/2 lg:w-4/12 bg-gray-800;
   }
 }

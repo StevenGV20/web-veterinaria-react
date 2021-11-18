@@ -4,15 +4,13 @@ import { Link } from 'react-router-dom';
 import SearchBar from '../widgets/searchBar';
 import NavBar from '../widgets/navbar';
 import MiniCart from '../miniCart';
-import SearchBarResults from '../widgets/searchBar/results';
-import {CartIcon, HeartIcon, LoginIcon, MenuIcon, SearchIcon} from '../utils/icons-svg'
+import {CartIcon, HeartIcon, LoginIcon, MenuIcon, SearchIcon} from '../utils/icons-svg';
 
 export default function Header(props) {
 
   const [isMenuOpen, setIsMenuOpen] = useState(false) 
   const [isCartOpen, setCartOpen] = useState(false);
   const [isSearchOpen, setSearchOpen] = useState(false);
-  const openSearch = (b) => setSearchOpen(b);
   const numItems = 4;
   return (
     <>   
@@ -24,13 +22,8 @@ export default function Header(props) {
                 <Link className="header-nav-logo-title" to="/home">
                   Logo Here.
                 </Link>
-                <div className="hidden lg:flex lg:w-1/2" onClick={()=>setSearchOpen(true)}>
+                <div className="hidden lg:flex lg:w-1/2">
                   <SearchBar />
-                  {isSearchOpen ? 
-                    <div className="header-container-search">
-                      <SearchBarResults />
-                    </div>
-                  : ""}
                 </div>
               </div>
               <div className="navbar-container-lg">
@@ -54,7 +47,7 @@ export default function Header(props) {
               </div>
             </div>
             <div className="header-mobile" >
-              <button onClick={() => setCartOpen(!isCartOpen)}>
+              <button onClick={() => setSearchOpen(!isSearchOpen)}>
                 <SearchIcon className="header-mobile-icon"/>
               </button>
               <button onClick={() => setCartOpen(!isCartOpen)}>
@@ -79,6 +72,11 @@ export default function Header(props) {
                 <MiniCart />
               </div>
           : ""}
+          {isSearchOpen?
+            <div className="header-mobile-search-container">
+              <SearchBar />
+            </div>
+          :""}
         </section>
       </div>
     </>
