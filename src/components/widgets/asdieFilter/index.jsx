@@ -81,7 +81,7 @@ export default function AsideFilter({children}) {
 
   const panelFilter = () => (
     filters.map((section) => (
-      <Disclosure as="div" key={section.id} className="product-grid-container-panelFilter">
+      <Disclosure as="div" key={section.id} className="product-filter-container-panelFilter">
         {({ open }) => (
           <>
             <h3 className="-my-3 flow-root">
@@ -164,7 +164,7 @@ export default function AsideFilter({children}) {
               leaveFrom="translate-x-0"
               leaveTo="translate-x-full"
             >
-              <div className="product-grid-container-filter-mobile">
+              <div className="product-filter-container-filter-mobile">
                 <div className="px-4 flex items-center justify-between">
                   <h2 className="text-lg font-medium text-gray-900">Filters</h2>
                   <button
@@ -187,17 +187,17 @@ export default function AsideFilter({children}) {
           </Dialog>
         </Transition.Root>
 
-        <main className="product-grid-container">
-          <div className="product-grid-container-title">
-            <h1 className="product-grid-title">Lista de Productos</h1>
+        <main className="product-filter-container">
+          <div className="product-filter-container-title">
+            <h1 className="product-filter-title">Lista de Productos</h1>
 
-            <div className="product-grid-container-sort">
-              <Menu as="div" className="product-grid-container-sort-menu">
+            <div className="product-filter-container-sort">
+              <Menu as="div" className="product-filter-container-sort-menu">
                 <div>
-                  <Menu.Button className="product-grid-sort-button">
+                  <Menu.Button className="product-filter-sort-button">
                     Sort
                     <ChevronDownIcon
-                      className="product-grid-sort-icon"
+                      className="product-filter-sort-icon"
                       aria-hidden="true"
                     />
                   </Menu.Button>
@@ -212,7 +212,7 @@ export default function AsideFilter({children}) {
                   leaveFrom="transform opacity-100 scale-100"
                   leaveTo="transform opacity-0 scale-95"
                 >
-                  <Menu.Items className="product-grid-sort-items">
+                  <Menu.Items className="product-filter-sort-items">
                     <div className="py-1">
                       {sortOptions.map((option) => (
                         <Menu.Item key={option.name}>

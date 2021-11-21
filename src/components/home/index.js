@@ -7,7 +7,7 @@ import axios from 'axios'
 
 export default function Home() {
 
-  const productos = [
+  /* const productos = [
     {id:1,name:"producto 1",precio:"345.00",url:"/product/1",img:"https://dummyimage.com/400x400/edf2f7/0f1631"},
     {id:2,name:"producto 2",precio:"345.00",url:"/product/2",img:"https://dummyimage.com/400x400/edf2f7/0f1631"},
     {id:3,name:"producto 1",precio:"345.00",url:"/product/1",img:"https://dummyimage.com/400x400/edf2f7/0f1631"},
@@ -17,7 +17,7 @@ export default function Home() {
     {id:7,name:"producto 1",precio:"345.00",url:"/product/1",img:"https://dummyimage.com/400x400/edf2f7/0f1631"},
     {id:8,name:"producto 2",precio:"345.00",url:"/product/2",img:"https://dummyimage.com/400x400/edf2f7/0f1631"}
   ];
-  
+   */
   const [products,setProducts] = useState([]);
 
   /* async function listProducts(){

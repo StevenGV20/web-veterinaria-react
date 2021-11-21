@@ -19,6 +19,7 @@ export default function Carousel({
         totalSlides={numItems}
         visibleSlides={numView}
         currentSlide={1}
+        infinite={true}
       >
         <Slider>
           {carouselItems.map((item, index) => (
