@@ -1,6 +1,6 @@
 .product-grid{
   &-container{
-    @apply w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 mx-auto;
+    @apply w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mx-auto;
   }
   &-item{
     @apply mx-auto;
