@@ -1,12 +1,13 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import Carousel from '../widgets/carousel'
 import ProductCard from '../product/product-card'
 import './_.css'
+import axios from 'axios'
 
 export default function Home() {
 
-  const products = [
+  const productos = [
     {id:1,name:"producto 1",precio:"345.00",url:"/product/1",img:"https://dummyimage.com/400x400/edf2f7/0f1631"},
     {id:2,name:"producto 2",precio:"345.00",url:"/product/2",img:"https://dummyimage.com/400x400/edf2f7/0f1631"},
     {id:3,name:"producto 1",precio:"345.00",url:"/product/1",img:"https://dummyimage.com/400x400/edf2f7/0f1631"},
@@ -16,6 +17,23 @@ export default function Home() {
     {id:7,name:"producto 1",precio:"345.00",url:"/product/1",img:"https://dummyimage.com/400x400/edf2f7/0f1631"},
     {id:8,name:"producto 2",precio:"345.00",url:"/product/2",img:"https://dummyimage.com/400x400/edf2f7/0f1631"}
   ];
+  
+  const [products,setProducts] = useState([]);
+
+  /* async function listProducts(){
+    const response = await axios.get('https://veterinaria-web-server-rest.herokuapp.com/producto/lista');
+    const data = response.data;
+    console.log(data);
+  } */
+
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  useEffect(async () => {
+    const response = await axios.get('https://veterinaria-web-server-rest.herokuapp.com/producto/lista');
+    const data = response.data;
+    console.log(data);
+    setProducts(data);
+  },[])
+
   const windowWidth = window.innerWidth;
   return (
     <div className="home-container">
@@ -123,7 +141,7 @@ export default function Home() {
         </div>
         <Carousel numItems={products.length} numView={windowWidth > 1000 ? 4 : windowWidth > 700 ? 3 : windowWidth > 500 ? 2 : 1}>
           {products.map( (product) => 
-            <ProductCard product={product} key={product.id}/>
+            <ProductCard product={product} key={product.idproducto}/>
           )}
         </Carousel> 
       </div>
@@ -134,7 +152,7 @@ export default function Home() {
         </div>
         <Carousel numItems={products.length} numView={windowWidth > 1000 ? 4 : windowWidth > 700 ? 3 : windowWidth > 500 ? 2 : 1}>
           {products.map( (product) => 
-            <ProductCard product={product} key={product.id}/>
+            <ProductCard product={product} key={product.idproducto}/>
           )}
         </Carousel> 
       </div>

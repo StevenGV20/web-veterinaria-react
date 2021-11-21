@@ -2,22 +2,23 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './_.css';
 
-export default function SearchBarResults({links}) {
+export default function SearchBarResults({links,onClose}) {
   return (
     <div className="search-results-container">
-      <table>
+      <table className="search-results-table">
         <thead className="search-results-title">
           <tr>
-            <td>Search results</td>
+            <td>({links.length}) results</td>
           </tr>
         </thead>
         <tbody>
-          <tr key="1">
-            <td><Link to="#">Producto 1</Link></td>
-          </tr>
-          <tr key="2">
-            <td><Link to="#">Producto 2</Link></td>
-          </tr>
+          {
+            links.map(link => (
+              <tr key={link.idproducto}>
+                <td className="search-results-links"><Link to={`/product/${link.idproducto}`} onClick={onClose}>{link.nombre}</Link></td>
+              </tr>
+            ))
+          }
         </tbody>
       </table>
     </div>

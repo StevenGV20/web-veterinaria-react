@@ -1,6 +1,6 @@
 .header {
   &-container {
-    @apply fixed z-10 w-full bg-transparent text-gray-100 items-baseline top-0;
+    @apply fixed z-50 w-full bg-transparent text-gray-100 items-baseline top-0;
     /* @apply flex flex-wrap place-items-start h-screen; */
   }
   &-section {
