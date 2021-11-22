@@ -142,7 +142,7 @@ export default function AsideFilter({children}) {
       <div>
         {/* Mobile filter dialog */}
         <Transition.Root show={mobileFiltersOpen} as={Fragment}>
-          <Dialog as="div" className="fixed inset-0 flex z-40 lg:hidden" onClose={setMobileFiltersOpen}>
+          <Dialog as="div" className="fixed inset-0 flex z-50 lg:hidden" onClose={setMobileFiltersOpen}>
             <Transition.Child
               as={Fragment}
               enter="transition-opacity ease-linear duration-300"
@@ -188,9 +188,6 @@ export default function AsideFilter({children}) {
         </Transition.Root>
 
         <main className="product-filter-container">
-          <div className="product-filter-container-title">
-            <h1 className="product-filter-title">Lista de Productos</h1>
-
             <div className="product-filter-container-sort">
               <Menu as="div" className="product-filter-container-sort-menu">
                 <div>
@@ -248,8 +245,6 @@ export default function AsideFilter({children}) {
                 <FilterIcon className="w-5 h-5" aria-hidden="true" />
               </button>
             </div>
-          </div>
-
           <section aria-labelledby="products-heading" className="pt-6 pb-24">
             <h2 id="products-heading" className="sr-only">
               Products

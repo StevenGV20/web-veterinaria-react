@@ -33,7 +33,7 @@ export default function Header(props) {
                 <Link  className="hover:text-gray-200" to="#">
                   <HeartIcon className="header-mobile-icon"/>
                 </Link>
-                <button  className="mini-cart-container" onClick={() => setCartOpen(true)} >
+                <button  className="mini-cart-btn" onClick={() => setCartOpen(true)} >
                   <CartIcon numItems={numItems} className="header-mobile-icon"/>
                   {isCartOpen ? 
                       <div className="mini-cart-popup-lg" onMouseLeave={() => setCartOpen(false)}>
@@ -41,7 +41,7 @@ export default function Header(props) {
                       </div>
                   : ""}
                 </button>
-                <Link  className="flex items-center hover:text-gray-200" to="#">
+                <Link  className="flex items-center hover:text-gray-200" to="/login">
                     <LoginIcon className="header-mobile-icon"/>
                 </Link>
               </div>
@@ -53,7 +53,7 @@ export default function Header(props) {
               <button onClick={() => setCartOpen(!isCartOpen)}>
                 <CartIcon numItems={numItems} className="header-mobile-icon"/>
               </button>
-              <Link to="#">
+              <Link to="/login">
                   <LoginIcon className="header-mobile-icon"/>
               </Link>
               <button className="header-mobile navbar-burger self-center" onClick={() => setIsMenuOpen(!isMenuOpen)}>

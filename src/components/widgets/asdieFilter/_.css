@@ -1,11 +1,11 @@
 .product-filter{
   &-container{
-    @apply px-4 sm:px-6 lg:px-16 mx-auto;
+    @apply sm:px-6 lg:px-16 mx-auto;
     &-title{
-      @apply relative z-10 flex items-baseline justify-between pt-8 pb-6 border-b border-gray-200;
+      @apply relative z-10 block text-left sm:flex items-baseline justify-between pt-8 pb-6 border-b border-gray-200;
     }
     &-sort{
-      @apply flex items-center;
+      @apply flex place-content-end items-center;
       &-menu{
         @apply relative inline-block text-left;
       }

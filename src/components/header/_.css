@@ -44,7 +44,7 @@
 
 
 .mini-cart{
-  &-container{
+  &-btn{
     @apply block;
   }
   &-popup{

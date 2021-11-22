@@ -1,7 +1,7 @@
 //public
 import Home from '../pages/home'
 import Register from '../pages/register'
-import SignIn from '../pages/signIn'
+import SignInPage from '../pages/signIn'
 import ProductList from '../pages/productList';
 import ServiceList from '../pages/serviceList';
 import ProductDetail from '../pages/productDetail';
@@ -18,7 +18,7 @@ const routes = [
     name: "Inicio de Sesion",
     path: "/login",
     exact: false,
-    component: SignIn
+    component: SignInPage
   },
   {
     name: 'Productos',
