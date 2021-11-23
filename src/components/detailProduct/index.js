@@ -12,12 +12,13 @@ export default function ProductDetail({product}) {
   const onChangeImage = (event) => {
     setImage(event.target.src);
   }
+  const widthW = window.innerWidth;
   
   return (
     <div className="product-detail-container">
       <div className="product-detail-container-images">
         <img src={image} alt="" className="product-detail-img"/>
-        <div className="mx-auto w-1/2">
+        <div className="product-detail-carousel">
           <Carousel numItems={3} numView={2} height={20} width={25}>
             <img src={product.images[1].src} alt="" onClick={onChangeImage} className="product-detail-img"/>
             <img src={product.images[2].src} alt="" onClick={onChangeImage}  className="product-detail-img"/>

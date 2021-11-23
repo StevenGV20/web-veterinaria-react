@@ -139,23 +139,23 @@ export default function Home() {
         <div className="home-container-products-title">
           Nuestro Productos
         </div>
-        <Carousel numItems={products.length} numView={windowWidth > 1000 ? 4 : windowWidth > 700 ? 3 : windowWidth > 500 ? 2 : 1}>
+        <Carousel numItems={products.length} numView={windowWidth > 1000 ? 4 : windowWidth > 700 ? 3 : windowWidth > 470 ? 2 : 1}>
           {products.map( (product) => 
             <ProductCard product={product} key={product.idproducto}/>
           )}
         </Carousel> 
       </div>
 
-      <div className="home-container-products">
+      {/* <div className="home-container-products">
         <div className="home-container-products-title">
           Nuestro Servicios
         </div>
-        <Carousel numItems={products.length} numView={windowWidth > 1000 ? 4 : windowWidth > 700 ? 3 : windowWidth > 500 ? 2 : 1}>
+        <Carousel numItems={products.length} numView={windowWidth > 1000 ? 4 : windowWidth > 700 ? 3 : windowWidth > 480 ? 2 : 1}>
           {products.map( (product) => 
             <ProductCard product={product} key={product.idproducto}/>
           )}
         </Carousel> 
-      </div>
+      </div> */}
     </div>
   )
 }
