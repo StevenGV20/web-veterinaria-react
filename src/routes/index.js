@@ -6,6 +6,7 @@ import ProductList from '../pages/productList';
 import ServiceList from '../pages/serviceList';
 import ProductDetail from '../pages/productDetail';
 import ServiceDetail from '../pages/serviceDetail';
+import MyCart from '../pages/checkout/myCart';
 
 const routes = [
   {
@@ -34,7 +35,7 @@ const routes = [
   },
   {
     name: "Detalle de Producto",
-    path: "/product/:id",
+    path: "/products/:id",
     exact: false,
     component: ProductDetail
   },{
@@ -45,8 +46,9 @@ const routes = [
   },
   {
     name: "Mi carrito",
-    path: "/miCart",
-    exact: false
+    path: "/myCart",
+    exact: false,
+    component: MyCart
   },
   {
     name: 'Inicio',

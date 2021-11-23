@@ -5,7 +5,7 @@ import './_.css'
 export default function ProductCard({product}) {
   return (
     <div className="product-card-container" key={product.idproducto}>
-            <Link className="p-2 w-full" to={`/product/${product.idproducto}`} key={product.idproducto}>
+            <Link className="p-2 w-full" to={`/products/${product.idproducto}`} key={product.idproducto}>
               <div className="product-card-details">
                   <img alt="team"
                       className="product-card-img"

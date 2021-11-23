@@ -2,7 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import './_.css'
 
-export default function MiniCart() {
+export default function MiniCart({onClose}) {
   const products = [
     {id:1,name:"Brit Premium by Nature Adult",precio:135,can:3,img:"https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=80&h=80&q=80"}
   ]
@@ -16,10 +16,9 @@ export default function MiniCart() {
               <button
                 type="button"
                 className="-m-2 p-2 text-gray-400 hover:text-gray-500"
-                
+                onClick={onClose}
               >
-                <span className="sr-only">Close panel</span>
-                X
+                x
               </button>
             </div>
           </div>
@@ -41,7 +40,7 @@ export default function MiniCart() {
                       <div>
                         <div className="mini-cart-products-detail">
                           <h3>
-                            <Link to={`/product/${product.id}`}>{product.name}</Link>
+                            <Link to={`/products/${product.id}`}>{product.name}</Link>
                           </h3>
                           <p className="ml-4">{product.precio}</p>
                         </div>
@@ -63,7 +62,7 @@ export default function MiniCart() {
             </div>
           </div>
         </div>
-
+        
         <div className="mini-cart-container-subtotal">
           <div className="flex justify-between text-base font-medium text-gray-900">
             <p>Subtotal</p>
@@ -72,7 +71,7 @@ export default function MiniCart() {
           <p className="mt-0.5 text-sm text-gray-500">Shipping and taxes calculated at checkout.</p>
           <div className="mt-6">
             <Link
-              to="#"
+              to="/myCart"
               className="flex justify-center items-center px-6 py-3 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-indigo-600 hover:bg-indigo-700"
             >
               Checkout

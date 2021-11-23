@@ -1,0 +1,29 @@
+.checkout{
+  &-container{
+    @apply mx-auto w-10/12 mt-4 grid grid-cols-1 md:grid-cols-4 space-y-4 md:space-y-0 md:space-x-4;
+    &-list{
+      @apply col-span-1 md:col-span-2 lg:col-span-3;
+    }
+    &-title{
+      @apply my-4 text-lg font-medium text-gray-900;
+    }
+    &-summary{
+      @apply col-span-1 md:col-span-2 lg:col-span-1 flex flex-col border border-black rounded-lg py-4 px-8;
+    }
+    &-payment{
+      @apply mt-6 flex flex-col justify-center text-sm text-center text-gray-500;
+    }
+    &-subtotal{
+      @apply flex flex-col justify-end items-end text-base font-medium space-x-16 text-gray-900 space-y-2 mt-4 w-full;
+      div{
+        @apply flex flex-row space-x-8 w-full;
+        p + p {
+          @apply w-full text-right;
+        }
+      }
+      b{
+        @apply text-xl;
+      }
+    }
+  }
+}

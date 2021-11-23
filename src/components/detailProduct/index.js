@@ -12,7 +12,6 @@ export default function ProductDetail({product}) {
   const onChangeImage = (event) => {
     setImage(event.target.src);
   }
-  const widthW = window.innerWidth;
   
   return (
     <div className="product-detail-container">

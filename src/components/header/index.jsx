@@ -37,7 +37,7 @@ export default function Header(props) {
                   <CartIcon numItems={numItems} className="header-mobile-icon"/>
                   {isCartOpen ? 
                       <div className="mini-cart-popup-lg" onMouseLeave={() => setCartOpen(false)}>
-                        <MiniCart />
+                        <MiniCart onClose={() => setCartOpen(false)}/>
                       </div>
                   : ""}
                 </button>
@@ -69,7 +69,7 @@ export default function Header(props) {
           : ""}
           {isCartOpen ? 
               <div className="mini-cart-popup">
-                <MiniCart />
+                <MiniCart onClose={() => setCartOpen(false)}/>
               </div>
           : ""}
           {isSearchOpen?
