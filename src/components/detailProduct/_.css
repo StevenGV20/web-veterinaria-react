@@ -1,0 +1,29 @@
+.product-detail{
+  &-container{
+    @apply grid grid-cols-1 lg:grid-cols-3 mx-auto w-full lg:w-11/12 space-x-4;
+    &-images{
+      @apply w-full col-span-2 block static;
+    }
+  }
+  &-img{
+    @apply mx-auto;
+  }
+  &-details-content{
+    @apply flex flex-col col-span-1 p-4 text-left w-full space-y-4;
+  }
+  &-title{
+    @apply font-semibold text-4xl;
+  }
+  &-price{
+    @apply font-semibold text-3xl;
+  }
+  &-add-cart{
+    @apply mx-auto w-1/2 lg:w-full;
+  }
+  &-description{
+    @apply font-light text-sm;
+    b{
+      @apply font-semibold;
+    }
+  }
+}

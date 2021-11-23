@@ -7,11 +7,31 @@
 }
 
 .btn{
-  @apply px-8 py-2 bg-gray-100 text-black rounded;
+  @apply px-8 py-2 bg-gray-100 text-black rounded font-semibold;
 }
 .btn-red{
-  @apply bg-red-600 text-white font-semibold;
+  @apply bg-red-600 text-white hover:bg-red-500;
 }
 .btn-blue{
-  @apply bg-blue-600 text-white font-semibold;
+  @apply bg-blue-600 text-white hover:bg-blue-500;
+}
+.btn-indigo{
+  @apply bg-indigo-500 text-white hover:bg-indigo-600;
+}
+.btn-block{
+  @apply bg-gray-300 text-gray-400;
+}
+.form{
+  &-container{
+    @apply text-left mx-auto w-full lg:w-1/2 flex flex-col;
+  }
+  &-group{
+    @apply my-2 flex flex-col;
+  }
+  &-input{
+    @apply p-2 mt-2 rounded-md border border-black;
+  }
+  &-button{
+    @apply px-4 py-2 rounded-md font-semibold mx-auto;
+  }
 }

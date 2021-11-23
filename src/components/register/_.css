@@ -1,0 +1,9 @@
+.register{
+  &-container{
+    @apply w-full sm:w-1/2 sm:py-6 p-4 mx-auto;
+    & .content{
+      @apply mx-auto;
+    }
+  }
+
+}

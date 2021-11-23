@@ -1,22 +1,8 @@
 .login{
   &-container{
-    @apply bg-white w-full sm:w-1/2 sm:py-6 p-4 mx-auto;
+    @apply w-full sm:w-1/2 sm:py-6 p-4 mt-auto lg:mt-28 mx-auto;
     & .content{
-      @apply mx-auto rounded-md;
-    }
-  }
-  &-form{
-    &-container{
-      @apply text-left mx-auto w-full lg:w-1/2 flex flex-col;
-    }
-    &-group{
-      @apply my-2 flex flex-col;
-    }
-    &-input{
-      @apply p-2 mt-2 rounded-md border border-black;
-    }
-    &-button{
-      @apply px-4 py-2 rounded-md bg-indigo-500 text-white font-semibold mx-auto;
+      @apply mx-auto;
     }
   }
   &-register{

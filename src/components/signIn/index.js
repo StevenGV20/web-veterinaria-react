@@ -7,8 +7,8 @@ export default function SignIn() {
     <div className="login-container">
       <div className="content">
         <b>Login</b>
-        <form className="login-form-container">
-          <div className="login-form-group">
+        <form className="form-container">
+          <div className="form-group">
             <label>Email o nombre de usuario:</label>
             <input 
               id=""
@@ -16,9 +16,9 @@ export default function SignIn() {
               value=""
               onChange=""
               type="text" 
-              className="login-form-input"/>
+              className="form-input"/>
           </div>
-          <div className="login-form-group">
+          <div className="form-group">
             <label>Clave:</label>
             <input 
               id=""
@@ -26,13 +26,13 @@ export default function SignIn() {
               value=""
               onChange=""
               type="password" 
-              className="login-form-input"/>
+              className="form-input"/>
           </div>
-          <button className="login-form-button">Iniciar Sesion</button>
+          <button className="form-button btn-indigo">Iniciar Sesion</button>
         </form>
         <div className="login-register-container">
           <label>No esta registrado?</label><br/>
-          <Link to="#" className="login-register-link">Hagalo aqui</Link>
+          <Link to="/register" className="login-register-link">Hagalo aqui</Link>
         </div>
       </div>
     </div>
