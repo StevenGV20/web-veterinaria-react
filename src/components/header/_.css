@@ -48,12 +48,14 @@
     @apply block;
   }
   &-popup{
-    @apply w-full sm:w-10/12 md:w-8/12 mx-auto md:absolute md:right-1 md:mx-0 lg:hidden;
-    &-lg{
-      @screen lg{
-        @apply absolute mt-4 w-4/12 right-4;
-      }
+    @apply w-full sm:w-10/12 md:w-8/12 mx-auto md:absolute md:right-1 md:mx-0;
+    @screen lg{
+      @apply absolute w-4/12 right-4;
     }
   }
 
+}
+
+.mini-menu-user{
+  @apply w-full sm:w-10/12 md:w-3/12 mx-auto md:absolute md:right-1 md:mx-0;
 }

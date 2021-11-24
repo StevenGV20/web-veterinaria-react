@@ -36,6 +36,6 @@
   }
 }
 
-.icon-size {
-  @apply h-6 w-6 text-white;
+.icon-size{
+  @apply h-6 w-6;
 }

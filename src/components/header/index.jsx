@@ -16,6 +16,14 @@ export default function Header(props) {
 
   const [user,setUser] = useState({id:1,name:"Frederico"});
   const numItems = 4;
+
+  const closeAllMenu = () => {
+    setIsMenuOpen(false);
+    setCartOpen(false);
+    setSearchOpen(false);
+    setIsMenuUserOpen(false);
+  }
+
   return (
     <>   
       <div  className="header-container">
@@ -37,17 +45,17 @@ export default function Header(props) {
                 <Link  className="hover:text-gray-200" to="#">
                   <HeartIcon className="header-mobile-icon"/>
                 </Link>
-                <button  className="mini-cart-btn" onClick={() => setCartOpen(true)} >
+                <button  className="mini-cart-btn" onClick={() => {closeAllMenu();setCartOpen(!isCartOpen)}} >
                   <CartIcon numItems={numItems} className="header-mobile-icon"/>
-                  {isCartOpen ? 
+                  {/* {isCartOpen ? 
                       <div className="mini-cart-popup-lg" onMouseLeave={() => setCartOpen(false)}>
                         <MiniCart onClose={() => setCartOpen(false)}/>
                       </div>
-                  : ""}
+                  : ""} */}
                 </button>
                 {
                   user!==null ? (
-                    <button className="flex items-center" to="/login">
+                    <button className="flex items-center" to="/login" onClick={()=> {closeAllMenu();setIsMenuUserOpen(!isMenuUserOpen)}}>
                       <LoginIcon className="header-mobile-icon"/>
                       <span className="ml-2">{user.name}</span>
                     </button>
@@ -63,15 +71,15 @@ export default function Header(props) {
               </div>
             </div>
             <div className="header-mobile" >
-              <button onClick={() => setSearchOpen(!isSearchOpen)}>
+              <button onClick={() => {closeAllMenu();setSearchOpen(!isSearchOpen)}}>
                 <SearchIcon className="header-mobile-icon"/>
               </button>
-              <button onClick={() => setCartOpen(!isCartOpen)}>
+              <button onClick={() => {closeAllMenu();setCartOpen(!isCartOpen)}}>
                 <CartIcon numItems={numItems} className="header-mobile-icon"/>
               </button>
               {
                   user!==null ? (
-                    <button className="flex items-center" onClick={()=> setIsMenuUserOpen(!isMenuUserOpen)}>
+                    <button className="flex items-center" onClick={()=> {closeAllMenu();setIsMenuUserOpen(!isMenuUserOpen)}}>
                       <LoginIcon className="header-mobile-icon"/>
                     </button>
                   )
@@ -81,7 +89,7 @@ export default function Header(props) {
                     </Link>
                   )
                 }
-              <button className="header-mobile navbar-burger self-center" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+              <button className="header-mobile navbar-burger self-center" onClick={() => {closeAllMenu();setIsMenuOpen(!isMenuOpen)}}>
                   <MenuIcon className="header-mobile-icon"/>
               </button>
             </div>
@@ -93,7 +101,7 @@ export default function Header(props) {
             </div>
           : ""}
           {isCartOpen ? 
-              <div className="mini-cart-popup">
+              <div className="mini-cart-popup" onMouseLeave={() => setCartOpen(false)}>
                 <MiniCart onClose={() => setCartOpen(false)}/>
               </div>
           : ""}
@@ -103,7 +111,7 @@ export default function Header(props) {
             </div>
           :""}
           {isMenuUserOpen?
-            <div className="mini-cart-popup">
+            <div className="mini-menu-user" onMouseLeave={()=> closeAllMenu()}>
               <MenuUserPopup />
             </div>
           :""}

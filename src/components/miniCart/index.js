@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { ExitIcon } from '../utils/icons-svg'
 import './_.css'
 
 export default function MiniCart({onClose}) {
@@ -15,10 +16,10 @@ export default function MiniCart({onClose}) {
             <div className="ml-3 h-7 flex items-center">
               <button
                 type="button"
-                className="-m-2 p-2 text-gray-400 hover:text-gray-500"
+                className="-m-2 p-2 text-black"
                 onClick={onClose}
               >
-                x
+                <ExitIcon className="icon-size"/>
               </button>
             </div>
           </div>
