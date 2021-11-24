@@ -5,12 +5,16 @@ import SearchBar from '../widgets/searchBar';
 import NavBar from '../widgets/navbar';
 import MiniCart from '../miniCart';
 import {CartIcon, HeartIcon, LoginIcon, MenuIcon, SearchIcon} from '../utils/icons-svg';
+import MenuUserPopup from '../signIn/popup';
 
 export default function Header(props) {
 
   const [isMenuOpen, setIsMenuOpen] = useState(false) 
   const [isCartOpen, setCartOpen] = useState(false);
   const [isSearchOpen, setSearchOpen] = useState(false);
+  const [isMenuUserOpen, setIsMenuUserOpen] = useState(false);
+
+  const [user,setUser] = useState({id:1,name:"Frederico"});
   const numItems = 4;
   return (
     <>   
@@ -41,9 +45,21 @@ export default function Header(props) {
                       </div>
                   : ""}
                 </button>
-                <Link  className="flex items-center hover:text-gray-200" to="/login">
-                    <LoginIcon className="header-mobile-icon"/>
-                </Link>
+                {
+                  user!==null ? (
+                    <button className="flex items-center" to="/login">
+                      <LoginIcon className="header-mobile-icon"/>
+                      <span className="ml-2">{user.name}</span>
+                    </button>
+                  )
+                  : (
+                    <Link  className="flex items-center" to="/login">
+                      <LoginIcon className="header-mobile-icon"/>
+                    </Link>
+                  )
+                }
+                
+                
               </div>
             </div>
             <div className="header-mobile" >
@@ -53,9 +69,18 @@ export default function Header(props) {
               <button onClick={() => setCartOpen(!isCartOpen)}>
                 <CartIcon numItems={numItems} className="header-mobile-icon"/>
               </button>
-              <Link to="/login">
-                  <LoginIcon className="header-mobile-icon"/>
-              </Link>
+              {
+                  user!==null ? (
+                    <button className="flex items-center" onClick={()=> setIsMenuUserOpen(!isMenuUserOpen)}>
+                      <LoginIcon className="header-mobile-icon"/>
+                    </button>
+                  )
+                  : (
+                    <Link  className="flex items-center" to="/login">
+                      <LoginIcon className="header-mobile-icon"/>
+                    </Link>
+                  )
+                }
               <button className="header-mobile navbar-burger self-center" onClick={() => setIsMenuOpen(!isMenuOpen)}>
                   <MenuIcon className="header-mobile-icon"/>
               </button>
@@ -75,6 +100,11 @@ export default function Header(props) {
           {isSearchOpen?
             <div className="header-mobile-search-container">
               <SearchBar />
+            </div>
+          :""}
+          {isMenuUserOpen?
+            <div className="mini-cart-popup">
+              <MenuUserPopup />
             </div>
           :""}
         </section>

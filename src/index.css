@@ -2,36 +2,40 @@
 @tailwind components;
 @tailwind utilities;
 
-#root{
+#root {
   @apply min-h-screen flex flex-col text-center;
 }
 
-.btn{
+.btn {
   @apply px-8 py-2 bg-gray-100 text-black rounded font-semibold;
 }
-.btn-red{
+.btn-red {
   @apply bg-red-600 text-white hover:bg-red-500;
 }
-.btn-blue{
+.btn-blue {
   @apply bg-blue-600 text-white hover:bg-blue-500;
 }
-.btn-indigo{
+.btn-indigo {
   @apply bg-indigo-500 text-white hover:bg-indigo-600;
 }
-.btn-block{
+.btn-block {
   @apply bg-gray-300 text-gray-400;
 }
-.form{
-  &-container{
+.form {
+  &-container {
     @apply text-left mx-auto w-full lg:w-1/2 flex flex-col;
   }
-  &-group{
+  &-group {
     @apply my-2 flex flex-col;
   }
-  &-input{
+  &-input {
     @apply p-2 mt-2 rounded-md border border-black;
   }
-  &-button{
+  &-button {
     @apply px-4 py-2 rounded-md font-semibold mx-auto;
   }
+}
+
+.icon-size {
+  @apply h-6 w-6 text-white;
 }
