@@ -4,7 +4,10 @@ import './_.css'
 
 export default function Checkout() {
   const products = [
-    {id:1,name:"Brit Premium by Nature Adult",precio:135,can:3,img:"https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=80&h=80&q=80"}
+    {id:1,name:"Brit Premium by Nature Adult",precio:135,can:3,img:"https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=80&h=80&q=80"},
+    {id:2,name:"Brit Premium by Nature Adult",precio:135,can:3,img:"https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=80&h=80&q=80"},
+    {id:3,name:"Brit Premium by Nature Adult",precio:135,can:3,img:"https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=80&h=80&q=80"},
+    {id:4,name:"Brit Premium by Nature Adult",precio:135,can:3,img:"https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=80&h=80&q=80"}
   ]
   return (
     <div className="checkout-container">
@@ -66,7 +69,7 @@ export default function Checkout() {
           </div>
           <div className="border-t border-black">
             <b>Total</b>
-            <b>$262.00</b>
+            <b className="w-full text-right">$262.00</b>
           </div>
         </div>
         <div className="checkout-container-payment">
@@ -81,7 +84,7 @@ export default function Checkout() {
             <Link
               type="button"
               className="text-indigo-600 font-medium hover:text-indigo-500"
-              to="/product"
+              to="/products"
             >
               Continue Shopping<span aria-hidden="true"> &rarr;</span>
             </Link>

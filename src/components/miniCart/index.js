@@ -78,7 +78,7 @@ export default function MiniCart({onClose}) {
               Checkout
             </Link>
           </div>
-          <div className="mt-6 flex justify-center text-sm text-center text-gray-500">
+          {/* <div className="mt-6 flex justify-center text-sm text-center text-gray-500">
             <p>
               or{' '}
               <button
@@ -88,7 +88,7 @@ export default function MiniCart({onClose}) {
                 Continue Shopping<span aria-hidden="true"> &rarr;</span>
               </button>
             </p>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

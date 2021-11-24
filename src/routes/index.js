@@ -7,8 +7,15 @@ import ServiceList from '../pages/serviceList';
 import ProductDetail from '../pages/productDetail';
 import ServiceDetail from '../pages/serviceDetail';
 import MyCart from '../pages/checkout/myCart';
+import MyAccountPage from '../pages/my-account';
 
 const routes = [
+  {
+    name:"Mi cuenta",
+    path:'/my-account',
+    exact:true,
+    component: MyAccountPage
+  },
   {
     name: "Registro",
     path: "/register",

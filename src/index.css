@@ -23,7 +23,7 @@
 }
 .form {
   &-container {
-    @apply text-left mx-auto w-full lg:w-1/2 flex flex-col;
+    @apply text-left mx-auto w-full lg:w-1/2 flex flex-col p-4;
   }
   &-group {
     @apply my-2 flex flex-col;
