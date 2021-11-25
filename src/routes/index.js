@@ -11,8 +11,26 @@ import MyAccountPage from '../pages/my-account';
 
 const routes = [
   {
+    name:"Change Password",
+    path:'/my-account/change-password',
+    exact:true,
+    component: MyAccountPage
+  },
+  {
+    name:"Order History",
+    path:'/my-account/order-history',
+    exact:true,
+    component: MyAccountPage
+  },
+  {
+    name:"Personal Information",
+    path:'/my-account/personal-information',
+    exact:true,
+    component: MyAccountPage
+  },
+  {
     name:"Mi cuenta",
-    path:'/my-account',
+    path:'/my-account/summary',
     exact:true,
     component: MyAccountPage
   },

@@ -9,7 +9,7 @@
     }
     &-list{
       &-sm{
-        @apply absolute top-12 left-0 flex flex-col text-left md:hidden bg-gray-100 w-full shadow-lg;
+        @apply absolute top-12 left-0 flex flex-col text-left md:hidden bg-gray-200 w-full shadow-lg rounded-b-lg;
       }
       &-lg{
         @apply hidden md:flex md:flex-col text-left space-y-2;

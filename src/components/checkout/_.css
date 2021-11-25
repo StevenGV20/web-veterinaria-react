@@ -1,14 +1,14 @@
 .checkout{
   &-container{
-    @apply mx-auto w-full sm:w-10/12 mt-4 grid grid-cols-1 md:grid-cols-4 space-y-4 md:space-y-0 md:space-x-4;
+    @apply mx-auto w-full sm:w-10/12 mt-4 grid grid-cols-1 md:grid-cols-4 space-y-4 md:space-y-0 md:space-x-4 ;
     &-list{
-      @apply col-span-1 md:col-span-2 lg:col-span-3 p-4 /* border border-black rounded-md */;
+      @apply col-span-1 md:col-span-2 lg:col-span-3 p-4 bg-gray-100 rounded-lg shadow-lg;
     }
     &-title{
       @apply text-lg font-medium text-gray-900;
     }
     &-summary{
-      @apply col-span-1 md:col-span-2 lg:col-span-1 flex flex-col md:border-l md:border-r border-black py-4 px-8;
+      @apply col-span-1 md:col-span-2 lg:col-span-1 flex flex-col md:border-l md:border-r  bg-gray-100 rounded-lg shadow-lg py-4 px-8;
     }
     &-payment{
       @apply mt-6 flex flex-col justify-center text-sm text-center text-gray-500;
