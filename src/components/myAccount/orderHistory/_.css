@@ -1,0 +1,14 @@
+.order-history{
+  &-container{
+    @apply mx-auto px-8 py-4;
+  }
+  &-title{
+    @apply font-semibold uppercase text-xl;
+  }
+  &-description{
+    @apply text-left w-full font-light;
+  }
+  &-table{
+    @apply p-4
+  }
+}

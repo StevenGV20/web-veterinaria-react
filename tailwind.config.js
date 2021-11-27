@@ -7,7 +7,11 @@ module.exports = {
       md: '768px',
       lg: '1000px',
       xl: '1440px',
-    }
+    },
+    fontFamily: {
+      'display': 'Barlow',
+      'body': 'Barlow',
+     }
   },
   variants: {
     extend: {

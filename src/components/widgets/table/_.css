@@ -1,0 +1,34 @@
+.table-container{
+  @apply -my-2 overflow-x-auto sm:-mx-6 lg:-mx-8;
+  &-p{
+    @apply py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8;
+  }
+  &-content{
+    @apply shadow overflow-hidden border-b border-gray-200 sm:rounded-lg;
+  }
+  &-tb{
+    @apply min-w-full divide-y divide-gray-200;
+  }
+  &-th{
+    @apply px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider;
+  }
+  &-tbody{
+    @apply bg-white divide-y divide-gray-200;
+  }
+  &-td{
+    @apply px-6 py-4 whitespace-nowrap;
+    & .title-1{
+      @apply text-sm font-medium text-gray-900;
+    }
+    & .title-2{
+      @apply text-sm text-gray-900;
+    }
+    & .title-3{
+      @apply text-sm text-gray-500;
+    }
+    & .active{
+      @apply px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800;
+    }
+    /* px-6 py-4 whitespace-nowrap text-sm text-gray-500 */
+  }
+}

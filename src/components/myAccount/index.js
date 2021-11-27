@@ -12,11 +12,15 @@ export default function MyAccount(props) {
     <ul className={`${sm ? 'account-menu-list-sm' : 'account-menu-list-lg'}`}>
       {
         rutasMyAccount.map(ruta => (
-          <li key={ruta.url}>
-            <NavLink to={ruta.url} className="account-menu-list-link" activeClassName="account-menu-list-link active">
-              <div className="h-4 w-4 mt-1 mr-1">{ruta.icon}</div>{ruta.name}
-            </NavLink>
-          </li>
+          <>
+            {ruta.view && (
+              <li key={ruta.url}>
+                <NavLink to={ruta.url} className="account-menu-list-link" activeClassName="account-menu-list-link active">
+                  <div className="h-4 w-4 mt-1 mr-1">{ruta.icon}</div>{ruta.name}
+                </NavLink>
+              </li>
+            )}
+          </>
         ))
       }
     </ul>

@@ -6,10 +6,14 @@ export default function Summary() {
     <div className="account-summary">
       {
         rutasMyAccount.map(ruta => (
-          <div className="account-summary-item">
-            <Link to={ruta.url}><b>{ruta.name}</b></Link>
-            <p>{ruta.description}</p>
-          </div>
+          <>
+            {ruta.view && (
+              <div className="account-summary-item">
+              <Link to={ruta.url}><b>{ruta.name}</b></Link>
+              <p>{ruta.description}</p>
+            </div>
+            )}
+          </>
         ))
       }
     </div>

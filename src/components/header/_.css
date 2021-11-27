@@ -57,5 +57,5 @@
 }
 
 .mini-menu-user{
-  @apply w-full sm:w-10/12 md:w-3/12 mx-auto md:absolute md:right-1 md:mx-0;
+  @apply w-full sm:w-10/12 md:w-3/12 xl:w-1/6 mx-auto md:absolute md:right-1 md:mx-0;
 }
