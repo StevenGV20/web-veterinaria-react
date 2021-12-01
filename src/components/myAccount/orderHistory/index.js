@@ -25,13 +25,13 @@ export default function OrderHistory() {
             <tr key={orden.email}>
               {console.log(Object.keys(orden).length)}
               <td className="table-container-td">
-                <div className="title-1">{orden.nro}</div>
+                <div className="title title-1">{orden.nro}</div>
               </td>
               <td className="table-container-td">
-                <div className="title-2">{orden.fechaRegistro}</div>
+                <div className="title title-2">{orden.fechaRegistro}</div>
               </td>
               <td className="table-container-td">
-                <span className="title-2">
+                <span className="title title-2">
                   {orden.items}
                 </span>
               </td>

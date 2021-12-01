@@ -1,6 +1,6 @@
 .order-history{
   &-container{
-    @apply mx-auto px-8 py-4;
+    @apply mx-auto p-4 lg:px-8;
   }
   &-title{
     @apply font-semibold uppercase text-xl;
@@ -9,6 +9,6 @@
     @apply text-left w-full font-light;
   }
   &-table{
-    @apply p-4
+    @apply py-4 w-full;
   }
 }

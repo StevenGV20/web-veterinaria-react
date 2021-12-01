@@ -7,6 +7,7 @@ export default function OrderDetail({order}) {
   console.log(order);
   return (
     <div className="order-detail-container">
+      <h1 className="title title-1">Detalles de la orden {order.id}</h1>
       <div className="order-detail-data">
         <div className="order-detail-data-span">
           <b>Nro de Orden:</b> <span>{order.id}</span>
@@ -18,7 +19,7 @@ export default function OrderDetail({order}) {
           <b>Monto:</b> <span>S/. {order.monto}</span>
         </div>
       </div>
-      <div className="mx-auto w-11/12">
+      <div className="mx-auto w-full">
         <Table>
           {
             order.items.map(item => (
@@ -28,7 +29,7 @@ export default function OrderDetail({order}) {
                     <img className="w-full" src={item.img} alt=""/>
                   </div>
                   <div className="order-detail-tb-content">
-                    <span className="title">{item.name}</span>
+                    <h1 className="title title-2">{item.name}</h1>
                     <MessageStock stock={item.stock}/>
                     <span>Cant: {item.can}</span><br/>
                     <span>Precio: S/. {item.price}</span>
