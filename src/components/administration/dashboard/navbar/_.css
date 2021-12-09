@@ -1,0 +1,9 @@
+.navbar-admin {
+  @apply w-full flex bg-gray-600 h-16 text-white font-semibold;
+  &-container {
+    @apply h-12 my-auto w-full flex flex-row items-center;
+    & .menu-icon {
+      @apply px-4;
+    }
+  }
+}

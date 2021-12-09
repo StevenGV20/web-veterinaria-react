@@ -1,9 +1,9 @@
 import React from "react";
 
-export default function CrudOrders() {
+export default function CrudPets() {
   return (
     <div>
-      <div>CrudOrders</div>
+      <div>CrudPets</div>
     </div>
   );
 }

@@ -1,0 +1,27 @@
+.dashboard {
+  &-container {
+    @apply h-screen w-56 left-0 bg-gray-900 text-white hidden md:block;
+
+    @media (max-width: 767px) {
+      &.open {
+        @apply block absolute h-full shadow-xl overflow-y-scroll p-4 md:hidden;
+      }
+    }
+  }
+  &-close {
+    @apply w-full text-right px-4 md:hidden -translate-x-full;
+  }
+  &-title {
+    @apply w-full font-bold uppercase text-center mt-8;
+  }
+  &-menu {
+    @apply space-y-4 my-4;
+    &-option {
+      @apply p-2 h-auto mx-4 flex flex-row space-x-4 hover:bg-gray-700 rounded-lg;
+
+      &.active {
+        @apply bg-white text-black;
+      }
+    }
+  }
+}
