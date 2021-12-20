@@ -10,13 +10,13 @@
     @apply min-w-full divide-y divide-gray-200;
   }
   &-th {
-    @apply px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider;
+    @apply px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider;
   }
   &-tbody {
     @apply bg-white divide-y divide-gray-200;
   }
   &-td {
-    @apply px-6 py-4 whitespace-nowrap;
+    @apply px-6 py-4 whitespace-nowrap text-center;
     & .title {
       @apply text-sm;
     }
@@ -30,7 +30,7 @@
       @apply p-2 inline-flex text-xs leading-5 font-semibold rounded-full text-red-500 hover:bg-red-100;
     }
     & .image {
-      @apply md:w-20;
+      @apply md:w-20 mx-auto;
     }
     /* px-6 py-4 whitespace-nowrap text-sm text-gray-500 */
   }

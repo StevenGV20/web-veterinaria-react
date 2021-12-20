@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react";
 import Table from "../../widgets/table";
 import { Edit, Delete } from "@mui/icons-material";
-import axios from "axios";
 import "./_.css";
 import { Link } from "react-router-dom";
 import Breadcrumb from "../../widgets/breadcrumb";
+import { getProductsByPage } from "../../../api/products";
+import Pagination from "../../pagination";
+import ModalMessage from "../../widgets/modalMessage";
 
 export default function CrudProductos() {
   const cols = [
@@ -18,30 +20,36 @@ export default function CrudProductos() {
   ];
 
   const [products, setProducts] = useState([]);
+  const [data, setData] = useState(0);
+  const [viewModal, setViewModal] = useState(false);
+
+  const fetchProducts = async (page) => {
+    const data = await getProductsByPage(page);
+    setData(data);
+    setProducts(data.content);
+  };
 
   useEffect(() => {
     (async () => {
-      const response = await axios.get(
-        "https://veterinaria-web-server-rest.herokuapp.com/producto/lista"
-      );
-      const data = response.data;
-      setProducts(data);
+      await fetchProducts();
     })();
   }, []);
+
   const links = [
     //{ name: "Administration", url: "/administration/", actual: false },
     { name: "Products", url: "/administration/products", actual: true },
   ];
+
   return (
     <div className="crud-products-container">
-      <div>CrudProductos</div>
+      <div>Lista de Productos</div>
       <div>
         <Breadcrumb links={links} />
       </div>
       <Table cols={cols}>
         {products.map((product) => (
           <>
-            <tr>
+            <tr key={product.idproducto}>
               <td className="table-container-td">
                 <span className="title">{product.idproducto}</span>
               </td>
@@ -68,7 +76,7 @@ export default function CrudProductos() {
               <td className="table-container-td">
                 <button
                   className="icon-delete"
-                  onClick={() => console.log(product.idproducto)}
+                  onClick={() => setViewModal(true)}
                 >
                   <Delete />
                 </button>
@@ -77,6 +85,20 @@ export default function CrudProductos() {
           </>
         ))}
       </Table>
+      {viewModal && (
+        <ModalMessage
+          onClose={() => setViewModal(false)}
+          title={"Desea eliminar el producto?"}
+        />
+      )}
+
+      <Pagination
+        totalPages={data.totalPages}
+        pageActual={data.number}
+        onPage={fetchProducts}
+        numberOfElements={data.numberOfElements}
+        totalElements={data.totalElements}
+      />
     </div>
   );
 }

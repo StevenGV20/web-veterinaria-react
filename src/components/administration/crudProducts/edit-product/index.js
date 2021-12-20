@@ -1,10 +1,18 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import Breadcrumb from "../../../widgets/breadcrumb";
 import "./_.css";
 
 export default function EditProduct() {
+  const links = [
+    //{ name: "Administration", url: "/administration/", actual: false },
+    { name: "Products", url: "/administration/products", actual: false },
+    { name: "Products", url: "", actual: true },
+  ];
   return (
-    <div className="w-5/6 sm:11/12 md:w-full text-black">
+    <div className="edit-product-container">
       EditProduct
+      <Breadcrumb links={links} />
       <form className="form-container">
         <div className="form-du-group">
           <div className="form-group">
@@ -45,7 +53,12 @@ export default function EditProduct() {
           <input className="form-input" type="file" />
         </div>
         <div className="form-container-buttons">
-          <button className="btn btn-red form-button">Cancelar</button>
+          <Link
+            className="btn btn-red form-button"
+            to="/administration/products"
+          >
+            Cancelar
+          </Link>
           <button className="btn btn-indigo form-button">Aceptar</button>
         </div>
       </form>
