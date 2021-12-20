@@ -3,7 +3,7 @@
   &-container {
     @apply h-12 my-auto w-full flex flex-row items-center;
     & .menu-icon {
-      @apply px-4;
+      @apply px-4 md:invisible;
     }
   }
 }

@@ -23,32 +23,38 @@
 }
 .form {
   &-container {
-    @apply text-left mx-auto w-full lg:w-1/2 flex flex-col p-4;
+    @apply text-left mx-auto w-full lg:w-2/3 xl:w-1/2 flex flex-col p-4;
   }
   &-group {
-    @apply my-2 flex flex-col;
+    @apply my-2 flex flex-col flex-1;
+  }
+  &-du-group {
+    @apply flex flex-col sm:flex-row sm:space-x-4 md:space-x-8;
   }
   &-input {
     @apply p-2 mt-2 rounded-md border border-black;
+  }
+  &-container-buttons {
+    @apply flex-col space-y-4 sm:space-y-0 sm:flex-row sm:space-x-4 md:space-x-8 items-center text-center;
   }
   &-button {
     @apply px-4 py-2 rounded-md font-semibold mx-auto;
   }
 }
 
-.icon-size{
+.icon-size {
   @apply h-6 w-6;
 }
 
-.title{
+.title {
   @apply font-bold text-black;
-  &-1{
+  &-1 {
     @apply text-2xl uppercase;
   }
-  &-2{
+  &-2 {
     @apply text-lg;
   }
-  &-3{
+  &-3 {
     @apply text-base;
   }
 }

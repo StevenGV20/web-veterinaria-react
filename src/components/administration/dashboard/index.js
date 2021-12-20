@@ -6,21 +6,26 @@ import routesAdmin from "../../../routes/routesAdmin";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 
 function Dashboard({ dashboardShow, openDashboard, goToStore }) {
-  const Menu = () => (
+  const Menu = ({ onClick }) => (
     <>
       <h1 className="dashboard-title">Administration</h1>
       <ul className="dashboard-menu">
         {routesAdmin.routesAdmin.map((route) => (
-          <li>
-            <NavLink
-              className="dashboard-menu-option"
-              activeClassName="dashboard-menu-option active"
-              to={route.path}
-            >
-              {route.icon}
-              <span>{route.name}</span>
-            </NavLink>
-          </li>
+          <>
+            {route.icon && (
+              <li>
+                <NavLink
+                  className="dashboard-menu-option"
+                  activeClassName="dashboard-menu-option active"
+                  to={route.path}
+                  onClick={onClick}
+                >
+                  {route.icon}
+                  <span>{route.name}</span>
+                </NavLink>
+              </li>
+            )}
+          </>
         ))}
         <li>
           <NavLink onClick={goToStore} to="/" className="text-center w-full">
@@ -65,7 +70,7 @@ function Dashboard({ dashboardShow, openDashboard, goToStore }) {
                 <div
                   className={`dashboard-container ${dashboardShow && "open"}`}
                 >
-                  <Menu />
+                  <Menu onClick={openDashboard} />
                 </div>
               </Transition.Child>
             </div>

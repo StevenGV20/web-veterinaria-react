@@ -1,0 +1,11 @@
+.edit-product {
+  &-container {
+    @apply w-full;
+  }
+  & .form-tri-group {
+    @apply grid grid-cols-3;
+    & .form-group {
+      @apply col-span-1;
+    }
+  }
+}

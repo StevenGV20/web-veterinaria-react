@@ -1,7 +1,7 @@
 .dashboard {
   &-container {
-    @apply h-screen w-56 left-0 bg-gray-900 text-white hidden md:block;
-
+    @apply w-56 left-0 bg-gray-900 text-white hidden md:block;
+    height: 100vmax;
     @media (max-width: 767px) {
       &.open {
         @apply block absolute h-full shadow-xl overflow-y-scroll p-4 md:hidden;

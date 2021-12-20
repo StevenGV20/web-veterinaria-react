@@ -7,11 +7,12 @@ export default function NavBar({ openDashboard }) {
   return (
     <div className="navbar-admin">
       <div className="navbar-admin-container">
-        {screenw < 768 && (
-          <div className="menu-icon" onClick={() => openDashboard()}>
-            <MenuIcon className="icon-size" />
-          </div>
-        )}
+        {/* {screenw < 768 && (
+          
+        )} */}
+        <div className="menu-icon" onClick={() => openDashboard()}>
+          <MenuIcon className="icon-size" />
+        </div>
       </div>
     </div>
   );

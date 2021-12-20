@@ -1,0 +1,5 @@
+.crud-products {
+  &-container {
+    @apply py-8 px-12;
+  }
+}
