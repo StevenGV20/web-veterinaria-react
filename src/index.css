@@ -58,3 +58,7 @@
     @apply text-base;
   }
 }
+
+.admin-container {
+  @apply py-8 px-12;
+}

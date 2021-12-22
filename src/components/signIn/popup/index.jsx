@@ -3,8 +3,18 @@ import { Link } from "react-router-dom";
 import "./_.css";
 import { LoginIcon, LogoOutIcon } from "../../utils/icons-svg";
 import AdminPanelSettingsIcon from "@mui/icons-material/AdminPanelSettings";
+/* import { useSelector, useDispatch } from "react-redux";
+import { changeTypeStoreSelector } from "../../../redux/globalSelector";
+import { changeTypeStore } from "../../../redux/actions/globalActions";
+ */
+export default function MenuUserPopup(props) {
+  const { user } = props;
+  /* const dispatch = useDispatch();
 
-export default function MenuUserPopup({ user }) {
+  console.log(props);
+  const changeToAdmin = () => {
+    dispatch(changeTypeStore("admin"));
+  }; */
   return (
     <div className="user-popup-container">
       <Link to="/my-account/summary" className="user-popup-link">

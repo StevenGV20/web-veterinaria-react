@@ -19,7 +19,7 @@ function Main(props) {
     if (device < 700) {
       setDashboardShow(false);
     }
-  }, [device]);
+  }, []);
 
   const goToStore = () => setTypeStore("client");
 

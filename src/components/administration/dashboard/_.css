@@ -1,15 +1,16 @@
 .dashboard {
   &-container {
-    @apply w-56 left-0 bg-gray-900 text-white hidden md:block;
-    height: 100vmax;
-    @media (max-width: 767px) {
+    @apply w-56 left-0 bg-gray-900 text-white hidden lg:block;
+    min-height: 100vh;
+    max-height: 300vmax;
+    @media (max-width: 1000px) {
       &.open {
-        @apply block absolute h-full shadow-xl overflow-y-scroll p-4 md:hidden;
+        @apply block absolute h-full shadow-xl overflow-y-scroll p-4 lg:hidden;
       }
     }
   }
   &-close {
-    @apply w-full text-right px-4 md:hidden -translate-x-full;
+    @apply w-full text-right px-4 lg:hidden -translate-x-full;
   }
   &-title {
     @apply w-full font-bold uppercase text-center mt-8;

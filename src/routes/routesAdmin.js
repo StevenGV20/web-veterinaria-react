@@ -11,7 +11,7 @@ import PersonIcon from "@mui/icons-material/Person";
 import StorefrontIcon from "@mui/icons-material/Storefront";
 import ListAltIcon from "@mui/icons-material/ListAlt";
 import HomeIcon from "@mui/icons-material/Home";
-import EditProduct from "../components/administration/crudProducts/edit-product";
+import FormProduct from "../components/administration/crudProducts/form-product";
 
 const routesAdmin = [
   {
@@ -57,10 +57,17 @@ const routesAdmin = [
     icon: <PetsIcon />,
   },
   {
-    name: "Edit Products",
-    path: "/administration/products/edit-product/:id",
+    name: "Edit Product",
+    path: "/administration/products/:id",
     exact: false,
-    component: EditProduct,
+    component: FormProduct,
+    icon: null,
+  },
+  {
+    name: "New Product",
+    path: "/administration/products/new",
+    exact: false,
+    component: FormProduct,
     icon: null,
   },
 ];

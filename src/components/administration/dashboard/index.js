@@ -11,21 +11,20 @@ function Dashboard({ dashboardShow, openDashboard, goToStore }) {
       <h1 className="dashboard-title">Administration</h1>
       <ul className="dashboard-menu">
         {routesAdmin.routesAdmin.map((route) => (
-          <>
+          <li key={route.name}>
             {route.icon && (
-              <li>
-                <NavLink
-                  className="dashboard-menu-option"
-                  activeClassName="dashboard-menu-option active"
-                  to={route.path}
-                  onClick={onClick}
-                >
-                  {route.icon}
-                  <span>{route.name}</span>
-                </NavLink>
-              </li>
+              <NavLink
+                className="dashboard-menu-option"
+                activeClassName="dashboard-menu-option active"
+                to={route.path}
+                onClick={onClick}
+                key={route.name}
+              >
+                {route.icon}
+                <span>{route.name}</span>
+              </NavLink>
             )}
-          </>
+          </li>
         ))}
         <li>
           <NavLink onClick={goToStore} to="/" className="text-center w-full">

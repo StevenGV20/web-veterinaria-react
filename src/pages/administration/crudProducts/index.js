@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import CrudProductos from "../../../components/administration/crudProducts";
-import EditProduct from "../../../components/administration/crudProducts/edit-product";
+import FormProduct from "../../../components/administration/crudProducts/form-product";
 
 export default function CrudProductosPage() {
   const [component, setComponent] = useState("crud");
@@ -12,9 +12,9 @@ export default function CrudProductosPage() {
       {component === "crud" ? (
         <CrudProductos goToEdit={goToEdit} />
       ) : component === "edit" ? (
-        <EditProduct />
+        <FormProduct />
       ) : (
-        <EditProduct />
+        <FormProduct />
       )}
     </div>
   );

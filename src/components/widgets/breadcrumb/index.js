@@ -14,7 +14,7 @@ export default function Breadcrumb({ links }) {
           </Link>
         </li>
         {links.map((link) => (
-          <li>
+          <li key={link.url}>
             <div className="breadcrumb-li">
               <RightArrowIcon className="w-6 h-6 text-gray-400" />
               {!link.actual ? (
