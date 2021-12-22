@@ -6,6 +6,19 @@ import routes from "./routes/";
 import routesAdmin from "./routes/routesAdmin";
 import Dashboard from "./components/administration/dashboard";
 import NavBar from "./components/administration/dashboard/navbar";
+/* import { connect } from "react-redux";
+import { changeTypeStoreAction } from "./redux/actions/globalActions";
+import { withRouter } from "react-router-dom";
+
+const mapStateToProps = (state) => {
+  return {
+    typeStore: state.typeStore,
+  };
+};
+
+const mapDispatchToProps = (dispatch) => ({
+  typeStore: (type) => dispatch(changeTypeStoreAction(type)),
+}); */
 
 function Main(props) {
   const [typeStore, setTypeStore] = useState("admin");
@@ -16,18 +29,19 @@ function Main(props) {
   const device = window.innerWidth;
 
   useEffect(() => {
-    if (device < 700) {
+    /* if (device < 700) {
       setDashboardShow(false);
-    }
-  }, []);
+    } */
+    console.log(typeStore);
+  }, [typeStore]);
 
-  const goToStore = () => setTypeStore("client");
+  const changeStore = (type) => setTypeStore(type);
 
   return (
     <>
       {typeStore === "client" ? (
         <>
-          <Header />
+          <Header changeStore={changeStore} />
           <div className="bg-white mt-20 p-4 flex-grow">
             <Switch location={props.location}>
               {routes.routes.map((route) => (
@@ -66,7 +80,7 @@ function Main(props) {
           <Dashboard
             dashboardShow={dashboardShow}
             openDashboard={openDashboard}
-            goToStore={goToStore}
+            goToStore={changeStore}
           />
           <div className="bg-white flex-grow">
             <NavBar openDashboard={openDashboard} />
@@ -87,4 +101,5 @@ function Main(props) {
   );
 }
 
+//export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Main));
 export default Main;

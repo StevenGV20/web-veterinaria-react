@@ -8,7 +8,8 @@ import { changeTypeStoreSelector } from "../../../redux/globalSelector";
 import { changeTypeStore } from "../../../redux/actions/globalActions";
  */
 export default function MenuUserPopup(props) {
-  const { user } = props;
+  const { changeStore } = props;
+  console.log("props", props);
   /* const dispatch = useDispatch();
 
   console.log(props);
@@ -20,7 +21,11 @@ export default function MenuUserPopup(props) {
       <Link to="/my-account/summary" className="user-popup-link">
         <LoginIcon className="icon-size" /> <span>Mi cuenta</span>
       </Link>
-      <Link to="/administration/home" className="user-popup-link">
+      <Link
+        to="/"
+        className="user-popup-link"
+        onClick={() => changeStore("admin")}
+      >
         <AdminPanelSettingsIcon className="icon-size" />
         <span>Administration</span>
       </Link>

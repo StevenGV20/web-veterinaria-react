@@ -16,13 +16,13 @@ export default function FormProduct(props) {
   const idproducto = props.match.params.id;
   const [product, setProduct] = useState({});
   const [files, setFiles] = useState([]);
+  const [desHTML, setDesHTML] = useState("<></>");
 
   useEffect(() => {
     (async () => {
       try {
         const data = await getProductById(idproducto);
         setProduct(data);
-        console.log(product);
       } catch (error) {
         setProduct({
           idproducto: "",
@@ -42,7 +42,12 @@ export default function FormProduct(props) {
         });
       }
     })();
-  }, []);
+  }, [idproducto]);
+
+  /*  useEffect(() => {
+    //console.log("initialProduct", product);
+    //console.log("2", Object.keys(product).length);
+  }, [product]); */
 
   const onChangeFiles = (e) => {
     var filesR = e.target.files;
@@ -55,11 +60,12 @@ export default function FormProduct(props) {
   };
 
   const onSubmit = () => {
-    setProduct({ ...product });
-    console.log("product", product);
+    setProduct({ ...product, descripcionHTML: desHTML });
+    console.log("productSubmit", { ...product, descripcionHTML: desHTML });
   };
 
   const onChange = (e) => {
+    console.log("changeproduct", product);
     let newProducto = { ...product };
     if (e.target.name && e.target.name.trim() !== "") {
       newProducto[e.target.name] = e.target.value;
@@ -139,12 +145,14 @@ export default function FormProduct(props) {
               data={product.descripcionHTML}
               onReady={(editor) => {
                 // You can store the "editor" and use when it is needed.
-                //console.log("Editor is ready to use!", editor);
+                console.log("Editor is ready to use!", editor);
               }}
               onChange={(event, editor) => {
                 const data = editor.getData();
+                setDesHTML(data);
+                //onChange({ target: { name: "descripcionHTML", value: data } });
                 //console.log({ event, editor, data });
-                setProduct({ ...product, descripcionHTML: data });
+                //setProduct({ ...product, descripcionHTML: data });
               }}
               onBlur={(event, editor) => {
                 //console.log("Blur.", editor);

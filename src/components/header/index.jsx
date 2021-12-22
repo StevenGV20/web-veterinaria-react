@@ -155,7 +155,7 @@ export default function Header(props) {
           )}
           {isMenuUserOpen ? (
             <div className="mini-menu-user" onMouseLeave={() => closeAllMenu()}>
-              <MenuUserPopup />
+              <MenuUserPopup changeStore={props.changeStore} />
             </div>
           ) : (
             ""

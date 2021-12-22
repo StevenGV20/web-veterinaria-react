@@ -27,7 +27,11 @@ function Dashboard({ dashboardShow, openDashboard, goToStore }) {
           </li>
         ))}
         <li>
-          <NavLink onClick={goToStore} to="/" className="text-center w-full">
+          <NavLink
+            onClick={() => goToStore("client")}
+            to="/"
+            className="text-center w-full"
+          >
             <ArrowBackIcon className="mr-4" />
             Ir a la tienda
           </NavLink>
